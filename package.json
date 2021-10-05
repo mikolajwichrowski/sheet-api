@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "google-spreadsheet": "^3.1.15",
+    "memory-cache": "^0.2.0"
+  },
+  "scripts": {
+    "serve": "node main.js",
+    "configure": "node configure.js"
+  }
+}
