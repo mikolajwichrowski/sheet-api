@@ -1,4 +1,4 @@
-const { SpreadSheetConnection } = require('../connection.js');
+const { SpreadSheetConnection } = require('../lib/connection.js');
 
 const listEndpoint = async (req, res) => {
     const { page } = req.query;

@@ -76,3 +76,24 @@ Example response:
     nextPage: 2
 }
 ```
+
+## Tests
+To run the test enter the `yarn tests` command. Be aware these are integration tests and need to have the testing sheet in the GSheet.
+
+Create one called `Test`
+
+With the values:
+
+```
+Key	Value
+1	a
+2	b
+3	c
+```
+
+## TODO
+
+[] Migrate to Typescript https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html
+[] Feather maybe https://feathersjs.com/
+[] Add swagger docs https://www.section.io/engineering-education/documenting-node-js-rest-api-using-swagger/
+

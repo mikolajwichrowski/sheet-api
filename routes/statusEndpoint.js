@@ -1,4 +1,4 @@
-const { SpreadSheetConnection } = require('../connection.js');
+const { SpreadSheetConnection } = require('../lib/connection.js');
 
 const statusEndpoint = async (req, res) => {
     const spreadsheet = await SpreadSheetConnection.getSpreadsheet();

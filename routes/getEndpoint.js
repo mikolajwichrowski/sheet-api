@@ -1,4 +1,4 @@
-const { SpreadSheetConnection } = require('../connection.js');
+const { SpreadSheetConnection } = require('../lib/connection.js');
 
 const getEndpoint = async (req, res) => {
     const { sheet, id } = req.params;
