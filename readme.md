@@ -77,6 +77,25 @@ Example response:
 }
 ```
 
+### POST /:sheet
+To create a row in the sheet make a json body with the columns in the sheet as keys
+
+Example request:
+```json
+{
+    "Column1": "Value1",
+    "Column2": "Value2",
+}
+```
+
+Example response with status `201`:
+```json
+{
+    "Column1": "Value1",
+    "Column2": "Value2",
+}
+```
+
 ## Tests
 To run the test enter the `yarn tests` command. Be aware these are integration tests and need to have the testing sheet in the GSheet.
 
