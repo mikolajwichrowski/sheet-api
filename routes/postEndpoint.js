@@ -27,7 +27,7 @@ const postEndpoint = async (req, res) => {
         res.status(201).json(createdData);
     } catch(err) { 
         res.status(400).json({
-            error: err.toString(),
+            error: err.message,
         });
     }
 };

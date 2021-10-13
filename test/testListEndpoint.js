@@ -14,9 +14,9 @@ describe('Integration: List endpoint', () => {
                     if(err) {
                         done(err);
                     }
-                    
+
                     assert.equal(res.body["currentPage"], 1)
-                    assert.equal(res.body["rows"].length, 3)
+                    assert.equal(res.body["rows"].length >  3, true)
                     done();
                 })
             
@@ -31,7 +31,7 @@ describe('Integration: List endpoint', () => {
                     }
 
                     assert.equal(res.status, 404)
-                    assert.equal(res.body.message, "not found")
+                    assert.equal(res.body["message"], "not found")
                     done();
                 })
         })

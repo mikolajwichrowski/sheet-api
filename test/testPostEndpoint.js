@@ -7,10 +7,10 @@ chai.use(chaiHttp)
 
 describe('Integration: Post endpoint', () => {
     describe('Creating rows', () => {
-        it('Should create a new test row and return 201', () => {
+        it('Should create a new test row and return 201', (done) => {
             const body = {
-                "Key": 4,
-                "Value": "d"
+                "Key": Math.random(1, 999).toPrecision(1),
+                "Value": Math.random(1, 999).toPrecision(1).toString(),
             }
 
             chai.request(server)
@@ -22,17 +22,17 @@ describe('Integration: Post endpoint', () => {
                         done(err);
                     }
 
-                    // assert.equal(res.status, 201);
-                    assert.equal(res.body, body);
+                    assert.equal(res.status, 201);
+                    assert.deepEqual(res.body, body);
                     
                     done();
                 })
         })
 
-        it('Should create nothing and return a 400', () => {
+        it('Should create nothing and return a 400', (done) => {
             const body = {
-                "kii": 4,
-                "valu": "d"
+                "kii": "kii",
+                "valu": "valu"
             }
 
             chai.request(server)
@@ -45,9 +45,7 @@ describe('Integration: Post endpoint', () => {
                     }
 
                     assert.equal(res.status, 400)
-                    assert.equal(res.body, {
-                        "error": "Unknown fields supplied kii, valu"
-                    })
+                    assert.equal(res.body["error"], "Unknown fields supplied kii, valu")
                     
                     done();
                 })
