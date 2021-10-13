@@ -9,8 +9,8 @@ describe('Integration: Post endpoint', () => {
     describe('Creating rows', () => {
         it('Should create a new test row and return 201', (done) => {
             const body = {
-                "Key": Math.random(1, 999).toPrecision(1),
-                "Value": Math.random(1, 999).toPrecision(1).toString(),
+                "Key": "5",
+                "Value": "f",
             }
 
             chai.request(server)

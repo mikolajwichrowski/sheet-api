@@ -5,34 +5,29 @@ const server = require('../main.js')
 
 chai.use(chaiHttp)
 
-describe('Integration: List endpoint', () => {
-    describe('Getting list from main', () => {
-        it('Should return a list of rows', (done) => {
+describe('Integration: Delete endpoint', () => {
+    describe('Deleting a row', () => {
+        it('Should delete a row', (done) => {
             chai.request(server)
-                .get("/Test")
+                .delete('/Test/5')
                 .end((err, res) => {
                     if(err) {
                         done(err);
                     }
-
-                    assert.equal(res.body["currentPage"], 1)
-                    assert.equal(res.body["rows"].length, 4)
-                    done();
+                    assert.equal(res.status, 204)
+                    done()
                 })
-            
         })
 
-        it('Should return a 404', (done) => {
+        it('should not find the row it wants to delete', (done) => {
             chai.request(server)
-                .get("/Test1")
+                .delete('/Test/999')
                 .end((err, res) => {
                     if(err) {
                         done(err);
                     }
-
                     assert.equal(res.status, 404)
-                    assert.equal(res.body["message"], "not found")
-                    done();
+                    done()
                 })
         })
     })
