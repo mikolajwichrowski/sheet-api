@@ -6,12 +6,17 @@ const server = require('../main.js')
 chai.use(chaiHttp)
 
 describe('Integration: List endpoint', () => {
-    describe('Get list from main', () => {
+    describe('Getting list from main', () => {
         it('Should return a list of rows', (done) => {
             chai.request(server)
                 .get("/Test")
                 .end((err, res) => {
-                    assert.equal(res.body.rows.length, 3)
+                    if(err) {
+                        done(err);
+                    }
+                    
+                    assert.equal(res.body["currentPage"], 1)
+                    assert.equal(res.body["rows"].length, 3)
                     done();
                 })
             
@@ -21,6 +26,10 @@ describe('Integration: List endpoint', () => {
             chai.request(server)
                 .get("/Test1")
                 .end((err, res) => {
+                    if(err) {
+                        done(err);
+                    }
+
                     assert.equal(res.status, 404)
                     assert.equal(res.body.message, "not found")
                     done();
