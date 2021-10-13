@@ -10,7 +10,7 @@ const listEndpoint = async (req, res) => {
     const sheetTab = await spreadsheet.onSheet(sheet)
     const data = await sheetTab.getPage(page)
 
-    if(data.rows.length > 0 && data.currentPage) {
+    if(data) {
         res.json(data)
     } else {
         res.status(404).json({ "message": "not found" })
