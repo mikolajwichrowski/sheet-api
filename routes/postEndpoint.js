@@ -3,13 +3,8 @@ const {
 } = require('../lib/connection.js');
 
 const postEndpoint = async (req, res) => {
-    const {
-        body,
-        params
-    } = req;
-    const {
-        sheet
-    } = params;
+    const { body, params } = req;
+    const { sheet } = params;
 
     if(!body) { 
         res.status(400).json({
