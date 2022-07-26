@@ -111,10 +111,3 @@ Key	Value
 4	d
 5	f
 ```
-
-## TODO
-
-[ ] Migrate to Typescript https://www.typescriptlang.org/docs/handbook/migrating-from-javascript.html
-[ ] Feather maybe https://feathersjs.com/
-[ ] Add swagger docs https://www.section.io/engineering-education/documenting-node-js-rest-api-using-swagger/
-
